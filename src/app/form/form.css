@@ -1,0 +1,158 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #fff5f8;
+  padding: 35px 16px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-card {
+  background: #ffffff;
+  border: 1px solid #f8dce6;
+  border-radius: 25px;
+  padding: 32px;
+  box-shadow: 0 10px 35px rgba(220, 116, 155, 0.10);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-icon {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.eyebrow {
+  color: #d77b9f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.form-header h2 {
+  color: #bd547e;
+  font-size: 25px;
+  font-weight: 800;
+  margin: 10px 0;
+}
+
+.form-header p {
+  color: #aa8795;
+  font-size: 12px;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #81566a;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border: 1px solid #f1d5e0;
+  background: #fff9fb;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #604353;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #e58eae;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(229, 142, 174, 0.13);
+}
+
+.form-group input::placeholder {
+  color: #c9abb8;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 13px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #ed91b2, #d76d96);
+  border: none;
+  box-shadow: 0 5px 13px rgba(215, 109, 150, 0.2);
+  margin-top: 10px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 17px rgba(215, 109, 150, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  margin-top: 12px;
+  color: #bd6386;
+  background: #fff5f8;
+  border: 1px solid #f2ccda;
+}
+
+.btn-secondary:hover {
+  background: #ffe8f0;
+}
+
+footer {
+  text-align: center;
+  color: #d3a0b3;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-top: 25px;
+}
+
+@media (max-width: 480px) {
+  :host {
+    padding: 20px 14px;
+  }
+
+  .form-card {
+    padding: 25px 20px;
+    border-radius: 22px;
+  }
+
+  .form-header h2 {
+    font-size: 22px;
+  }
+
+  .form-group input {
+    font-size: 16px;
+  }
+}

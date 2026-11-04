@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="form-card">
+
+    <div class="form-header">
+      <div class="form-icon">🐷</div>
+      
+      <h2>กินมุทะ</h2>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>ชื่อ (ไม่ต้องใส่คำนำหน้า):</label>
+        <input
+          type="text"
+          [(ngModel)]="formData.firstName"
+          name="firstName"
+          required
+          placeholder="เช่น ปราญชลี">
+      </div>
+
+      <div class="form-group">
+        <label>นามสกุล:</label>
+        <input
+          type="text"
+          [(ngModel)]="formData.lastName"
+          name="lastName"
+          required
+          placeholder="เช่น พลเดช">
+      </div>
+
+      <div class="form-group">
+        <label>วันที่ว่าง:</label>
+        <input
+          type="date"
+          [(ngModel)]="formData.date"
+          name="date"
+          required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+        {{ isSubmitting ? '⏳ กำลังบันทึกข้อมูล...' : '💾 บันทึกข้อมูล' }}
+      </button>
+
+      <a routerLink="/home" class="btn btn-secondary">
+        ← ย้อนกลับ
+      </a>
+
+    </form>
+  </div>
+
+  <footer>MADE WITH ตาต้าตาโบ๋จิ๊กโก๋ดอนนา</footer>
+</div>

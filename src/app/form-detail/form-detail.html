@@ -1,0 +1,48 @@
+<div class="container">
+  <header class="page-header">
+    <div>
+      <span class="eyebrow">🐷 MOO KRATA CLUB</span>
+      <h2>สาดไปสมาซิก</h2>
+      <p>รายชื่อสมาชิกที่จองโต๊ะแล้ว</p>
+    </div>
+    <div class="member-count">
+      <span>{{ bookings().length }}</span>
+      <small>สมาชิก</small>
+    </div>
+  </header>
+
+  <div class="loading" *ngIf="isLoading()">
+    กำลังโหลดข้อมูล...
+  </div>
+
+  <div class="empty-state" *ngIf="!isLoading() && bookings().length === 0">
+    <div class="empty-icon">🍲</div>
+    <h3>ยังไม่มีสมาซิก</h3>
+  </div>
+
+  <div class="booking-list" *ngIf="!isLoading() && bookings().length > 0">
+    <div class="booking-card" *ngFor="let booking of bookings(); let i = index">
+      <div class="number">{{ i + 1 }}</div>
+
+      <div class="booking-info">
+        <span class="booking-label">MEMBER</span>
+        <h3>{{ booking.firstName }} {{ booking.lastName }}</h3>
+        <div class="date">
+          <span>📅</span>
+          <span>วันที่ว่าง: {{ booking.date }}</span>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        จองแล้ว
+      </div>
+    </div>
+  </div>
+
+  <a routerLink="/home" class="back-button">
+    <span>←</span> ย้อนกลับหน้าแรก
+  </a>
+
+  <footer>MADE WITH ตาต้าตาโบ๋จิ๊กโก๋ดอนนา</footer>
+</div>

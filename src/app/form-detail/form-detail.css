@@ -1,0 +1,282 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #fff5f8;
+  padding: 35px 16px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  color: #604353;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Header */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  color: #d77b9f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.page-header h2 {
+  color: #bd547e;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 9px 0 5px;
+}
+
+.page-header p {
+  color: #aa8795;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Member count */
+.member-count {
+  background: #ffe8f0;
+  border: 1px solid #f8d5e2;
+  border-radius: 16px;
+  padding: 12px 17px;
+  min-width: 55px;
+  text-align: center;
+}
+
+.member-count span {
+  display: block;
+  color: #bd547e;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.member-count small {
+  color: #d77b9f;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Booking list */
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.booking-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #f8dce6;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(220, 116, 155, 0.08);
+  transition: all 0.2s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(220, 116, 155, 0.15);
+}
+
+/* Number */
+.number {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffe8f0;
+  color: #bd547e;
+  border-radius: 13px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* Booking information */
+.booking-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.booking-label {
+  color: #d77b9f;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+}
+
+.booking-info h3 {
+  color: #604353;
+  font-size: 16px;
+  margin: 5px 0 8px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #aa8795;
+  font-size: 12px;
+}
+
+/* Status */
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  background: #fff0f5;
+  color: #c65e88;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e58eae;
+}
+
+/* Loading */
+.loading {
+  padding: 35px 15px;
+  text-align: center;
+  background: white;
+  border: 1px solid #f8dce6;
+  border-radius: 18px;
+  color: #d77b9f;
+}
+
+/* Empty state */
+.empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #f8dce6;
+  border-radius: 20px;
+}
+
+.empty-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.empty-state h3 {
+  color: #bd547e;
+  font-size: 17px;
+  margin: 8px 0;
+}
+
+.empty-state p {
+  color: #aa8795;
+  font-size: 13px;
+}
+
+/* Back button */
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  margin-top: 25px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #ed91b2, #d76d96);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 5px 13px rgba(215, 109, 150, 0.2);
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 17px rgba(215, 109, 150, 0.3);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: #d3a0b3;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-top: 28px;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  :host {
+    padding: 25px 14px;
+  }
+
+  .page-header h2 {
+    font-size: 23px;
+  }
+
+  .page-header p {
+    font-size: 11px;
+  }
+
+  .member-count {
+    padding: 10px 13px;
+  }
+
+  .booking-card {
+    padding: 14px 12px;
+    gap: 10px;
+    border-radius: 15px;
+  }
+
+  .number {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    border-radius: 11px;
+  }
+
+  .booking-info h3 {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 11px;
+  }
+
+  .status {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .booking-card {
+    gap: 7px;
+    padding: 12px 9px;
+  }
+
+  .status {
+    padding: 5px 6px;
+    font-size: 9px;
+  }
+}

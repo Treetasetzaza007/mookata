@@ -1,3 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+body {
+  margin: 0;
+  font-family: 'Sarabun', 'Kanit', sans-serif;
+  background-color: #ffe4e1; /* สีพื้นหลังชมพูอ่อน (Misty Rose) */
+  color: #333;
+}
+
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #ff1493; /* สีชมพูเข้ม (Deep Pink) */
+}
+
+/* สไตล์ปุ่มกด */
+.btn {
+  display: block;
+  width: 100%;
+  background-color: #ff69b4; /* สีชมพู (Hot Pink) */
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background-color: #ff1493;
+}
+
+.btn-secondary {
+  background-color: #ffc0cb; /* ชมพูอ่อนมาก สำหรับปุ่มกลับ */
+  color: #d81b60;
+}
+
+/* สไตล์ฟอร์ม */
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #d81b60;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ffb6c1;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 600px) {
+  .container {
+    margin: 10px;
+    padding: 15px;
+  }
+}
