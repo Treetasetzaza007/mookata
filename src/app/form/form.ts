@@ -39,7 +39,7 @@ export class FormComponent {
       const apiUrl = 'https://mookata-black.vercel.app/api/bookings';
       this.http.post(apiUrl, this.formData).subscribe({
         next: (res) => {
-          alert('✅ บันทึกข้อมูลจองโต๊ะสำเร็จ!'); 
+          alert('✅ บันทึกข้อมูลเรียบร้อยแล้ว'); 
           this.router.navigate(['/form-detail']);
         },
         error: (err) => {
