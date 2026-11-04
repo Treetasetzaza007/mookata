@@ -25,7 +25,7 @@ export class FormDetailComponent implements OnInit {
   fetchData() {
     this.isLoading.set(true);
 
-    const apiUrl = 'http://localhost:3000/api/bookings';
+    const apiUrl = '[https://mookata-black.vercel.app/api/bookings]';
 
     this.http.get<any[]>(apiUrl)
       .pipe(

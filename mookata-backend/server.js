@@ -4,13 +4,12 @@ const cors = require('cors');
 const mysql = require('mysql2');
 
 const app = express();
-const port = 3000;
+// แก้ไข 1: เปลี่ยนมารับ Port จากระบบของ Vercel หรือใช้ 3000 ถ้าทำในเครื่อง
+const port = process.env.PORT || 3000; 
 
-// เปิดให้ Angular (Frontend) สามารถส่งข้อมูลเข้ามาได้
 app.use(cors());
 app.use(express.json());
 
-// ตั้งค่าเชื่อมต่อ TiDB
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -24,11 +23,10 @@ const pool = mysql.createPool({
 });
 const promisePool = pool.promise();
 
-// API สำหรับ "บันทึก" ข้อมูล (ใช้ในหน้ากรอกฟอร์ม)
 app.post('/api/bookings', async (req, res) => {
   try {
     const { firstName, lastName, date, time } = req.body;
-    const bookingTime = time || '00:00:00'; // ถ้าไม่ได้กรอกเวลามา ให้เป็น 00:00:00
+    const bookingTime = time || '00:00:00'; 
 
     const [result] = await promisePool.query(
       'INSERT INTO bookings (first_name, last_name, booking_date, booking_time) VALUES (?, ?, ?, ?)',
@@ -41,16 +39,13 @@ app.post('/api/bookings', async (req, res) => {
   }
 });
 
-// API สำหรับ "ดึง" ข้อมูล (ใช้ในหน้ารายชื่อคนจอง)
 app.get('/api/bookings', async (req, res) => {
   try {
     const [rows] = await promisePool.query('SELECT * FROM bookings ORDER BY id DESC');
     
-    // แปลงชื่อตัวแปรให้ตรงกับที่ Angular ต้องการ
     const formattedData = rows.map(row => ({
       firstName: row.first_name,
       lastName: row.last_name,
-      // แปลงวันที่ให้อยู่ในรูปแบบ YYYY-MM-DD
       date: new Date(row.booking_date).toISOString().split('T')[0] 
     }));
     
@@ -61,7 +56,9 @@ app.get('/api/bookings', async (req, res) => {
   }
 });
 
-// เริ่มรัน Server
 app.listen(port, () => {
   console.log(`🚀 Backend รันแล้วที่ http://localhost:${port}`);
 });
+
+// แก้ไข 2: เพิ่มบรรทัดนี้ล่างสุด เพื่อบอกให้ Vercel รู้ว่านี่คือตัวแอปพลิเคชัน
+module.exports = app;

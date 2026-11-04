@@ -36,7 +36,7 @@ export class FormComponent {
       
       this.isSubmitting = true; 
 
-      const apiUrl = 'http://localhost:3000/api/bookings'; 
+      const apiUrl = '[https://mookata-black.vercel.app/api/bookings]';
       
       this.http.post(apiUrl, this.formData).subscribe({
         next: (res) => {
